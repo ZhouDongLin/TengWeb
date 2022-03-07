@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+
+   li{
+    list-style: none;
+    }
+
+   a{
+    text-decoration: none;
+    }
+
+   .clearfix:before, .clearfix:after{
+    content:"";
+    display: table;
+    }
+   .clearfix:after{
+    clear:both;
+   }
+  .clearfix{
+    *zoom: 1;
+   }
+
+
+
+
+    .hmain {
+        height: 700px;
+        /* width: 1550px; */
+        width: 100%;
+        position: relative;
+
+
+    }
+
+    .hmain video{
+        height: 100%;
+        width: 100%;
+        /* 很重要，让视频填充 */
+        object-fit: cover;
+
+    }
+
+
+   /* .hmain:hover .mask{
+        display: block;
+    }
+*/
+    .hmain .header{
+    position: absolute;
+    height: 72px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    z-index: 3;
+
+    }
+
+    .hmain .header .logo
+    { 
+          /* 需要加浮动否则父盒子和子盒子共同塌陷 */
+    float: left;
+    width: 168px;
+    height: 25px;
+    margin-top:25px;
+    margin-left: 150px;
+    }
+
+
+   .hmain .header .logo img
+   {
+    width: 100%;
+    height: 100%;
+    }
+
+    .hmain .header .nav {
+    /* position: relative; */
+
+    float: left;
+    width: 760px;
+    height: 72px;
+    margin-left: 150px;
+    }
+
+   /* .hmain .header .nav:hover .mask{
+        display: block;
+    }
+*/
+    .hmain .header .nav ul li{
+    float: left;
+    position: relative;
+    transition: all 1s;
+    }
+
+
+    /*.hmain .header .nav:hover .mask{
+        display: block;
+    }
+    */
+    .hmain .header .nav ul li a{
+    display: block;
+    position: relative;
+    height: 72px;
+    line-height: 72px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    padding: 0 35px;
+    transition: all 0.4s;
+    }
+    .hmain .header .nav ul li .mask-1{
+        display:none;
+        position: absolute;
+        top: 75px;
+        left:0px;
+        height: 200px;
+        width: 110px;
+        background-color:rgba(0, 0, 0, 0.3);
+        z-index: 5;
+    }
+
+
+    .hmain .header .nav ul li:hover .mask-1{
+        display: block;
+    }
+
+    .hmain .header .nav ul li .mask-2{
+        display:none;
+        position: absolute;
+        top: 77px;
+        left:0px;
+        height: 200px;
+        width: 110px;
+        background-color:rgba(0, 0, 0, 0.3);
+        z-index: 5;
+    }
+
+
+    .hmain .header .nav ul li:hover .mask-2{
+        display: block;
+    }
+
+    .hmain .header .nav ul li .mask-3{
+        display:none;
+        position: absolute;
+        top: 77px;
+        left:0px;
+        height: 200px;
+        width: 110px;
+        background-color:rgba(0, 0, 0, 0.3);
+        z-index: 5;
+    }
+
+
+    .hmain .header .nav ul li:hover .mask-3{
+        display: block;
+    }
+
+    .hmain .header .nav ul li .mask-4{
+        display:none;
+        position: absolute;
+        top: 77px;
+        left:0px;
+        height: 200px;
+        width: 150px;
+        background-color:rgba(0, 0, 0, 0.3);
+        z-index: 5;
+    }
+
+
+    .hmain .header .nav ul li:hover .mask-4{
+        display: block;
+    }
+
+    .hmain .header .nav ul li .mask-5{
+        display:none;
+        position: absolute;
+        top: 77px;
+        left:0px;
+        height: 200px;
+        width: 130px;
+        background-color:rgba(0, 0, 0, 0.3);
+        z-index: 5;
+    }
+
+
+    .hmain .header .nav ul li:hover .mask-5{
+        display: block;
+    }
+
+    .hmain .header .nav ul li .mask-6{
+        display:none;
+        position: absolute;
+        top: 77px;
+        left:0px;
+        height: 200px;
+        width: 110px;
+        background-color:rgba(0, 0, 0, 0.3);
+        z-index: 5;
+    }
+
+
+    .hmain .header .nav ul li:hover .mask-6{
+        display: block;
+    }
+
+    .hmain .header .nav ul li p{
+        font-size: 18px;
+        font-weight: 550;
+        color: rgb(74, 98, 138);
+        
+        text-align: center;
+    }
+    
+
+
+
+
+
+
+
+    .hmain .header .nav ul li a:hover{
+    border-bottom: 5px solid rgb(0,81,216);
+    color: rgb(0,81,216);
+
+    }
+    
+    .hmain .header .choice
+    {
+    float: right;
+    height: 22px; 
+    margin-top: 25px;
+    margin-right:150px ;
+    color: rgb(118, 119, 122);
+    }
+
+   .hmain .header .choice a{
+    font-size: 20px;
+    color:rgb(143, 144, 146);
+    }
+
+
+   .hmain .header .choice  a:hover{
+    color: #fff;
+    }
+    /*.hmain .header .nav .mask{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100px;
+        width: 100px;
+        background-color: brown;
+        
+
+    }
+    */
+
+   .hmain .text{
+       position: absolute;
+       top: 300px;
+       left: 450px;
+       height:500px;
+       width:500px;
+       font-size: 58px;
+       color: #fff;
+       z-index: 3;
+       font-family: 'Microsoft YaHei'
+
+   }
+
+
+   .word{
+    width: 765px;
+    height: 170px;
+    color: #5f6464;
+    font-size: 24px;
+    font-family: 'TencentSansw3';
+    margin: 100px auto;
+    }
+
+
+    .index{
+    overflow: hidden;
+    height:250px ;
+    width: 1240px;
+    margin: 0 auto;
+    }
+
+    .index ul li{
+    overflow: hidden;
+    position: relative;
+    float: left;
+    height: 250px;
+    width: 400px;
+    margin-right: 20px;
+    }
+
+
+    .index ul li::before{
+        content:'';
+        background-color: #fff;
+        position: absolute;
+        top: 145px;
+        left: 145px;
+        height: 5px;
+        width: 0px;
+        z-index: 3;
+        transition: all 0.5s;
+    }
+
+    .index ul li:hover::before{
+        width: 120px;
+    }
+
+    .index ul li::after{
+        display: none;
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color:rgba(42, 89, 170, 0.3) ;
+        z-index: 2;
+    }
+
+    .index ul li:hover::after{
+        display: block;
+    }
+
+    
+
+
+
+
+
+    .index ul li a p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 125px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-size:27px;
+        font-weight: 500;
+        color: #fff;
+        transform:translate(-50%,-50%) ;
+    }
+
+    .index ul li:last-child{
+        margin-right: 0;
+    }
+
+    .indwx ul li img{
+        transition: all 2s;
+    }
+
+    .index ul li:hover img{
+        transform: scale(1.2);
+        
+    }
+
+    .slide{
+
+        width: 100%;
+        height: 780px;
+        background:url(images/sbk.jpg)  repeat;
+        margin:85px 0;
+    }
+
+    .slide .left{
+        width: 36%;
+        height: 100%;
+        background-color:rgba(27,31,37, 0.5) ;
+    }
+
+    .slide .left ul li{
+        position: relative;
+        padding: 10px;
+        height: 260px;
+        width: 100%;
+    }
+
+    .slide .left ul li>a{
+        display: block;
+        padding: 20px;
+        margin:20px auto;
+        height: 100px;
+        width: 350px;
+        font-size: 27px;
+        color: #fff;;
+        text-align: center;
+        line-height: 100px;
+        background-color: rgba(27,31,37, 0.5) ;
+        transition: all 0.5;
+    }
+
+     .slide .left ul li>a:hover{
+         border-left: 10px solid  rgb(0,81,216);
+
+    }
+
+   .slide .left  li .right1{
+       display: none;
+        position: absolute;
+        top: 0px;
+        left: 100%;
+        height: 780px;
+        width: 940px;
+        background-color: brown;
+    }
+
+    .slide .left ul li:nth-child(1):hover .right1{
+        display: block;
+    }
+
+
+
+    .slide .left  li .right2{
+        display: none;
+        position: absolute;
+        top: -280px;
+        left: 100%;
+        height: 780px;
+        width: 940px;
+        background-color: brown;
+    }
+    .slide .left ul li:nth-child(2):hover .right2{
+        display: block;
+    }
+
+
+
+    .slide .left  li .right3{
+        display: none;
+        position: absolute;
+        top: -560px;
+        left: 100%;
+        height: 780px;
+        width: 940px;
+        background-color: brown;
+    }
+    .slide .left ul li:nth-child(3):hover .right3{
+        display: block;
+    }
+
+    /*.slide .left ul li .right1 ul li{
+        float: left;
+        height: 390px;
+        width: 470px;
+        background-color: blue;   
+    }
+    */
+
+    .slide .left ul li .right1 div{
+        float: left;
+        height: 390px;
+        width: 470px;
+        background-color: blueviolet;
+    }
+    .slide .left ul li .right2 div{
+        float: left;
+        height: 390px;
+        width: 470px;
+        background-color: blueviolet;
+    }
+    .slide .left ul li .right3 div{
+        float: left;
+        height: 390px;
+        width: 470px;
+        background-color: blueviolet;
+    }
+
+    .slide .left ul li img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .trangle {
+    height:620px ;
+    width: 1240px;
+    margin: 0 auto;
+    }
+
+    .trangle{
+        position: relative;
+    }
+
+    .trangle .img{
+        float: left;
+        width: 627px;
+        height: 620px;
+    }
+
+    .trangle .img img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .trangle .tr{
+        position: absolute;
+        top: 0;
+        left: 539px;
+        border-top:310px solid transparent;
+        border-left:44px solid transparent;
+        border-right:44px solid #fff;
+        border-bottom:310px solid #fff;
+        
+        height: 0;
+        width: 0;
+    }
+
+    .trangle .text{
+        float: right;
+        position: relative;
+        height: 620px;
+        width: 613px;
+        background-color: #fff;
+    }
+
+    .trangle .text a{
+        display: block;
+        position: absolute;
+        top: 200px;
+        left: 50px;
+        height: 300px;
+        width: 300px;
+        
+    }
+
+    .change{
+        margin-top:84px;
+        height: 700px;
+        width: 100%;
+        background-color: coral;
+    }
+
+    .foot{
+
+        height: 500px;
+        width: 100%;
+        
+    }
+    .foot .row{
+        height: 80px;
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid rgb(242,243,245);
+
+    }
+
+    .foot .column{
+        height: 340px;
+        width: 100%;
+        background-color: #fff;
+        
+    }
+
+    .foot .footer{
+        position: relative;
+        height: 60px;
+        width: 100%;
+        margin-bottom: 20px;
+        
+        
+    }
+
+    .foot .row h3{
+        float: left;
+        /* text-align: center; */
+        color: rgb(107,111,111);
+        font-size: 25px;
+        font-weight: 400;
+        margin-left: 130px;
+        line-height: 80px;
+    }
+    .foot .row div{
+        float: left;
+        margin-left: 40px;
+        height: 100%;
+        width: 500px;
+
+
+    }
+
+    .foot .row div a{
+        display: block;
+        float: left;
+        height: 40px;
+        width: 40px;
+        margin: 20px 10px;
+        
+    }
+
+
+    .foot .column dl{
+        float: left;
+        height: 270px;
+        width: 145px;
+        margin-right: 70px;
+
+    }
+
+    .foot .column dl dd{
+        margin:20px 25px;
+        font-size: 18px;
+        
+
+    }
+
+    .foot .column dl dd a{
+        color:rgb(107,111,111);
+    }
+
+    .foot .logo2{
+        float: right;
+        margin-right: 130px;
+        margin-top: 100px;
+
+        top: 100px;
+        left: 700px;
+        height:50px ;
+        width: 300px;
+    }
+
+    .foot .footer .footer1
+    {
+        font-size: 17px;
+        color: rgb(107,111,111);
+    }
+
+
+    
+
+    
+
+    
+
+</style>
+
+
+<body>
+    <!-- 头部 -->
+    <div class="hmain">
+        <!-- 上边栏栏部分 -->
+        <div class="header">
+    
+            <!-- logo部分 -->
+            <div class="logo">
+                <img src="images/Tlogo.gif" alt="">
+            </div>
+
+            <div class="nav">
+                <ul>
+                    <li><a href="https://mp.csdn.net/console/article">简介</a>
+                        <div class="mask-1">
+                            <p>职业发展<br><br>职业责任<br><br>发展规划<br><br>新近腾讯源</p>
+                            
+
+                        </div>
+                    </li>
+                    <li><a href="https://mp.csdn.net/console/article">业务</a>
+                        <div class="mask-2">
+                            <p>职业发展<br><br>职业责任<br><br>发展规划<br><br>新近腾讯源</p>
+
+                        </div>
+                    
+                    </li>
+                    <li><a href="https://mp.csdn.net/console/article">员工</a>
+                        <div class="mask-3">
+                            <p>职业发展<br><br>职业责任<br><br>发展规划<br><br>新近腾讯源</p>
+
+                        </div>
+                    
+                    </li>
+                    <li><a href="https://mp.csdn.net/console/article">企业责任</a>
+                        <div class="mask-4">
+                            <p>职业发展<br><br>职业责任<br><br>发展规划<br><br>新近腾讯源</p>
+                        </div>
+                        
+                    
+                    </li>
+                    <li><a href="https://mp.csdn.net/console/article">投资者</a>
+                        <div class="mask-5">
+                            <p>职业发展<br><br>职业责任<br><br>发展规划<br><br>新近腾讯源</p>
+
+                        </div>
+                    
+                    </li>
+                    <li><a href="https://mp.csdn.net/console/article">媒体</a>
+                        <div class="mask-6">
+                            <p>职业发展<br><br>职业责任<br><br>发展规划<br><br>新近腾讯源</p>
+
+                        </div>
+                    
+                    </li>
+                </ul>
+
+                <!-- <div class="mask"> -->
+                    <!-- 345 -->
+
+                <!-- </div> -->
+
+            </div>
+
+            <!-- 字体选择部分 -->
+            <div class="choice">
+               <a href="#" class="text1">简</a>/
+               <a href="#" >繁</a>/
+               <a href="#" >EN</a>
+            </div>
+        </div>
+
+        <!-- 视频和漂浮字部分 -->
+
+        <video src="images/Teng.mp4" autoplay="autoplay" muted="muted" loop=loop></video>
+        <div class="text">
+            
+            <p><pre>连接你我   共生未来</pre></p>
+      
+        </div>
+
+
+    </div>
+
+
+<!-- 文字部分 -->
+    <div class="word">
+       <p>
+        <pre>
+            腾讯是一家以互联网为基础的平台公司，
+
+        通过技术丰富互联网用户的生活，助力企业数字化升级。
+
+             我们的使命是“用户为本 科技向善”。
+        </pre>
+       
+        </p>
+        
+    </div>
+
+    <!-- 图片并排部分 -->
+    <div class="index">
+        <ul>
+            <li>
+                 <a href="#">
+                <img src="images/index1.png" alt="" style="width: 100%;height: 100%;"><p>公司简介</p> 
+                </a>
+                
+            </li>
+                
+            <li> <a href="#">
+                <img src="images/index2.png" alt=""><p>企业文化</p>
+               </a>
+               
+                
+            </li>
+
+            <li > <a href="#">
+                <img src="images/index3.png" alt=""> <p>办公地点</p>
+                 </a>
+                
+            </li>
+                
+            
+        </ul>
+    </div>
+
+    <!-- 内容滑动部分 -->
+    <div class="slide">
+        <div class="left">
+            <ul>
+                <li>
+                    <a href="#" >连接用户与生活-></a>
+                    <div class="right1">
+                          <div><a href="#">
+                              <img src="images/s1.png" alt="">
+                          </a></div>
+                          <div>
+                              <a href="#">
+                                <img src="images/s2.png" alt="">
+                              </a>
+                          </div>
+                          <div>
+                            <a href="#">
+                                <img src="images/s3.png" alt="">
+                              </a>
+                          </div>
+                          <div>
+                            <a href="#">
+                                <img src="images/s4.png" alt="">
+                              </a>
+                          </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">连接企业与科技-></a>
+                    <div class="right2">
+                        <div><a href="#">
+                            <img src="images/s9.png" alt="">
+                        </a></div>
+                        <div>
+                            <a href="#">
+                              <img src="images/s10.png" alt="">
+                            </a>
+                        </div>
+                        <div>
+                          <a href="#">
+                              <img src="images/s4.png" alt="">
+                            </a>
+                        </div>
+                        <div>
+                          <a href="#">
+                              <img src="images/s6.png" alt="">
+                            </a>
+                        </div>
+
+                    </div>
+
+                </li>
+                <li>
+                    <a href="#">连接现在与未来-></a>
+                    <div class="right3">
+                        <div><a href="#">
+                            <img src="images/s5.png" alt="">
+                        </a></div>
+                        <div>
+                            <a href="#">
+                              <img src="images/s6.png" alt="">
+                            </a>
+                        </div>
+                        <div>
+                          <a href="#">
+                              <img src="images/s7.png" alt="">
+                            </a>
+                        </div>
+                        <div>
+                          <a href="#">
+                              <img src="images/s8.png" alt="">
+                            </a>
+                        </div>
+
+                    </div>
+
+                </li>
+            </ul>
+
+        </div> 
+
+       
+
+    
+      
+    </div>
+
+    <!-- 含有三角形制作部分 -->
+    <div class="trangle">
+        <div class="img">
+            <img src="images/chang.jpg" alt="">
+        </div>
+        <div class="tr">
+
+        </div>
+
+        <div class="text">
+            <a href="#">
+                <img src="images/text.png" alt="" style="width: 100%; height: 100%;">
+            </a>
+            
+        </div>
+    </div>
+
+
+    <!-- 含有图片转换部分 -->
+    <div class="change">
+        <img src="images/bk3.jpg" alt="" style="width: 100%; height: 100%;">
+    </div>
+
+    <!-- 页脚部分 -->
+    <div class="foot">
+        <div class="row">
+            <h3>关注我们</h3>
+            <div>
+                <a href="#"><img src="images/logo1.png" alt="" style="width: 100%; height: 100%;"></a> 
+                <a href="#"><img src="images/logo2.png" alt="" style="width: 100%; height: 100%;"></a>
+                <a href="#"><img src="images/logo3.png" alt="" style="width: 100%; height: 100%;"></a>
+                <a href="#"><img src="images/logo4.png" alt="" style="width: 100%; height: 100%;"></a>
+            </div>    
+
+        </div>
+
+
+        <div class="column">
+            <dl style="margin-left:130px">
+                <dt style="padding-top: 50px;">
+                    <h3 style="margin-left: 25px;  font-size: 21px; color:rgb(107,111,111)">加入我们</h3>
+                </dt>
+                <dd><a href="#">社会招聘</a></dd>
+                <dd><a href="#">校园招聘</a></dd>
+                <dd><a href="#">国际招聘</a></dd>
+            </dl>
+            
+
+            <dl>
+                <dt style="padding-top: 50px;">
+                    <h3 style="margin-left: 25px;  font-size: 20px; color:rgb(107,111,111)">法律信息</h3>
+                </dt>
+                <dd><a href="#">客户服务</a></dd>
+                <dd><a href="#">合作洽谈</a></dd>
+                <dd><a href="#">腾讯采购</a></dd>
+                <dd><a href="#">媒体及投资</a></dd>
+
+
+            </dl>
+
+            <dl>
+                <dt style="padding-top: 50px;">
+                    <h3 style="margin-left: 25px;  font-size: 20px; color:rgb(107,111,111)">联系我们</h3>
+                </dt>
+                <dd><a href="#">服务协议</a></dd>
+                <dd><a href="#">隐私政策</a></dd>
+                <dd><a href="#">知识产权</a></dd>
+
+            </dl>
+
+            <div class="logo2">
+                <img src="images/Tlogo2.png" alt="" style="width: 100%; height: 100%;" >
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            <div class="footer1">
+                <pre>                  法律声明  阳光准则  网站地图  粤网文[2017] 6138-1456号  粤B2-20090059-1</pre>
+            </div>
+            
+
+        </div>
+    </div>
+
+</body>
+</html>
